@@ -22,5 +22,8 @@ Gem::Specification.new do |s|
   s.executables        = ['yonce']
   s.require_paths      = ['lib']
 
+  s.add_runtime_dependency('faraday', '~> 0.9')
+
   s.add_development_dependency('bundler', '>= 1.7.10', '< 2.0')
+
 end
