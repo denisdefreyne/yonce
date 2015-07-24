@@ -6,7 +6,13 @@ module Yonce #:nodoc:
     notes = %w( ♩ ♪ ♫ ♬ )
     lib = LyricsLibrary.new
     #lyrics = ['All the single ladies']
-    lyrics = lib.lyrics
-    puts "#{notes.sample} #{lyrics.sample[:lyrics]} #{notes.sample}"
+    begin
+      song = lib.lyrics.sample
+      song_title = song[:name]
+      lyrics = LyricsLibrary.sample(song[:lyrics])
+    rescue LyricsLibrary::NoLyrics
+      retry
+    end
+    puts "#{notes.sample} #{lyrics} #{notes.sample}\t (Song: \"#{song_title}\")"
   end
 end
