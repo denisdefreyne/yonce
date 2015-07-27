@@ -1,0 +1,5 @@
+tags
+yonce-*.gem
+/coverage
+/doc/yardoc
+/.yardoc
